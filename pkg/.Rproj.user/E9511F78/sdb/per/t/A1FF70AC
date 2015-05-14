@@ -1,0 +1,16 @@
+{
+    "contents" : "# # 1. разобраться с разархивированием: installr + 7zip\n# # 2. почитать про постинг пакетов в cran + r-forge\n# # 3. написать виньетку\n# # 4. написать мануал\n# \n# # Виньетки\n# # закачка данных и визуализация встренными возможностями\n# # pie-chart\n# # диаграммы\n# # chart.StackedBar()\n# # предсказание банкротства банков\n# \n# # data101 <- download.dbf(\"2010-07\")\n# # data102 <- download.dbf(\"2006-07\", \"2007-01\", form=102)\n# # data123 <- download.dbf(\"2014-07\", \"2015-01\", form=123)\n# # data134 <- download.dbf(\"2010-07\", \"2011-01\", form=134)\n# # data135 <- download.dbf(\"2010-07\", \"2011-01\", form=135)\n# \n# \n# load(\"~/Documents/R packages/cbrAPI/big data.RData\")\n# \n# data <- data101[ , which(names(data101) %in% c('REGN','NUM_SC','ITOGO','IITG','A_P','DT'))]\n# x <- subset(data, DT < '2007-01-01')\n# y <- subset(data, DT >= '2007-01-01')\n# data$ITOGO <- c(x$ITOGO, y$IITG)\n# data <- data[ , -which(names(data) %in% c('IITG'))]\n# rm(x,y)\n# \n# data.small <- subset(data, subset=(DT >= '2008-01-01' & DT < '2009-01-01'))\n# \n# data.small$NUM_SC <- as.integer(as.character(data.small$NUM_SC))\n# data.small$ITOGO <- as.integer(as.character(data.small$ITOGO))\n# x <- subset(data.small, subset=A_P==1)\n# y <- subset(data.small, subset=A_P==2)\n# x$ITOGO <- x$ITOGO * (-1)\n# data.small <- rbind(x,y)\n# data.small <- data.small[with(data.small, order(DT, REGN, NUM_SC)), ]\n# rm(x,y)\n# \n# sub1 <- subset(data.small, A_P==1)\n# sub700 <- subset(data.small, subset=(NUM_SC %in% c(70100:70299, 70300:70499, 70600:70699)))\n# data.sub <- matrix(nrow=0,ncol=4)\n# colnames(data.sub) <- c(\"REGN\", \"DT\", \"Profit\", \"Assets\")\n# regnums <- levels(as.factor(data.small$REGN))\n# dates <- levels(as.factor(data.small$DT))\n# for (i in regnums) {\n#   message(i)\n#   for (j in dates) {\n#     profit <- subset(sub1, subset=(REGN==i & DT==j))\n#     assets <- subset(sub700, subset=(REGN==i & DT==j))\n#     data.sub <- rbind(data.sub, c(i, j, sum(profit$ITOGO), sum(assets$ITOGO)))\n#   }\n# }\n# data.sub <- as.data.frame(data.sub)\n# rm(sub1, sub700, profit, regnums, dates, i, j)\n# \n# \n# \n# data.plot <- subset(data.sub, REGN %in% 1:50)\n# \n# ggplot(data=data.plot, aes(x=DT, y=Profit, fill=DT)) +\n#   geom_boxplot()\n# \n",
+    "created" : 1425456325491.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3101134646",
+    "id" : "A1FF70AC",
+    "lastKnownWriteTime" : 1430121684,
+    "path" : "~/R packages/cbrAPI/R/test.R",
+    "project_path" : "R/test.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
