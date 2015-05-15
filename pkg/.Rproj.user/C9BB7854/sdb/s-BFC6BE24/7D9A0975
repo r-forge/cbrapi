@@ -1,0 +1,16 @@
+{
+    "contents" : "Package: cbrAPI\nType: Package\nTitle: CBR API\nVersion: 1.0\nDate: 2015-02-24\nAuthor: Barmin Valeriy, Alexander Didenko\nMaintainer: Barmin Valeriy <valerybarmin@gmail.com>\nDescription: Download and read dbf-files with different forms of accounting reports (101, 102, 123, 134, 135) for a certain time period, as well as find information about the banks on Central Bank of Russia site.\nLicense: GPL (>= 2)\nDepends: foreign, plyr, XML\nSuggests: knitr\nVignetteBuilder: knitr",
+    "created" : 1431715053066.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3685544437",
+    "id" : "7D9A0975",
+    "lastKnownWriteTime" : 1431732878,
+    "path" : "~/Documents/R packages/cbrAPI/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "dcf"
+}

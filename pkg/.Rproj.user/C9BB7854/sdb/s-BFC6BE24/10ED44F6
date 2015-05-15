@@ -1,0 +1,16 @@
+{
+    "contents" : "\\name{AcceptABEL-package}\n\\alias{AcceptABEL-package}\n\\alias{AcceptABEL}\n\\docType{package}\n\\title{\nEstimate false positive rate (FPR) in your GWAS study\n}\n\\description{\nPackage allows you to estimate FPR in your GWAS study using an approach alternative to randomization tests. Estimation is based upon simulating several artificial phenotypes and running association tests to assess the false positive rate at different p-value thresholds. \n}\n\\details{\n\\tabular{ll}{\nPackage: \\tab AcceptABEL\\cr\nType: \\tab Package\\cr\nVersion: \\tab 1.0\\cr\nDate: \\tab 2013-02-26\\cr\nLicense: \\tab GPL (>= 2)\\cr\n}\nPackage contains several functions that form a pipeline for estimating FPR. There are three main steps in the FPR analysis:\n1/ Preparing simulated phenotypes\n2/ Running association tests\n3/ Determining FPR for different thresholds\nIn the example provided below, FPR is determined for default p-values of: 0.001, 0.01 and 0.05. First, an example dataset stored in \ntest_data structure is loaded and quality control is run using GenABEL check.marker function. Following these initial preparations, \nartificial phenotypes are created for 0.001 percent of all the markers, association tests are run and, finally, FPR are determined. \nFor more details on each of the functions included in the package, see appropriate man page.\n}\n\\author{\nMarcin Kierczak, Xia Shen\n\nMaintainer: Marcin Kierczak <marcin.kierczak@slu.se>, Xia Shen <xia.shen@slu.se>\n}\n\\references{\n~~ Literature or other references for background information ~~\n}\n~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation directory ~~\n\\keyword{ package }\n\\seealso{\n~~ Optional links to other man pages, e.g. ~~\n~~ \\code{\\link[<pkg>:<pkg>-package]{<pkg>}} ~~\n}\n\\examples{\n# Load GenABEL functions\n#require(GenABEL)\n# Load example data\n#data(\"test_data\")\n# Run basic quality control\n#qc1 <- check.marker(data=data.orig, callrate=0.95, perid.call=0.95, ibs.exclude=\"lower\", maf=0.01, p.level=1e-10)\n#data.qc1 <- data.orig[qc1$idok, qc1$snpok]\n# Simulate phenotypes for 0.001% of the markers\n#data.simulated <- simulatePhenotypes(data=data.qc1, frac=0.001, H2 = .8, means = c(-1, 0, 1), variances = c(.8, 0, .3), verbose = TRUE)\n# Perform association tests and record their outcomes\n#data.models <- fitModels(simulatedData = data.simulated, verbose = TRUE)\n# Use results from the previous step to determine FPR for different \n# p-value thresholds (by default: 0.001, 0.01 and 0.05)\n#fpr <- computeFPR(results = data.models, plot = TRUE, verbose = TRUE)\n}\n",
+    "created" : 1431718003851.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1842031357",
+    "id" : "10ED44F6",
+    "lastKnownWriteTime" : 1431693969,
+    "path" : "~/Desktop/pkg/man/AcceptABEL-package.Rd",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_doc"
+}
